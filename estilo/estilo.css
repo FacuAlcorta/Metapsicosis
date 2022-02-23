@@ -268,6 +268,10 @@ nav .btn1{
 
 /* ----------      INDEX      ---------- */
 
+.indexBody{
+    margin-top: 0px;
+}
+
 .indexHeader{
     display: flex;
     width: fit-content;
@@ -552,6 +556,10 @@ footer{
     
     /* ----------      INDEX      ---------- */
     
+    .indexBody{
+        margin-top: 0px;
+    }
+
     .indexHeader{
         display: flex;
         width: fit-content;
