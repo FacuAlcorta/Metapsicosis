@@ -7,6 +7,8 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
     
 }
 
+/*    ------   NAVBAR   ------    */
+
 .navbar{
     background-color: rgba(29, 28, 28, 0.5);
     height: auto;
@@ -54,6 +56,13 @@ nav div ul .actual{
     line-height: 35px;
 }
 
+nav div ul li:hover{
+    background-color: white;
+    transform: translate(0px, -5px);
+}
+
+/*    ------   INDEX   ------    */
+
 .portadaIndex .pMeta,
 .portadaIndex .pMael{
     display: flex;
@@ -81,12 +90,9 @@ nav div ul .actual{
     font-size: 2.5em;
 }
 
-nav div ul li:hover{
-    background-color: white;
-    transform: translate(0px, -5px);
-}
-
-.portadaShadow{
+.portadaShadow,
+.principal .section img,
+.elmain .section .marcos__foto .autobio__img{
     box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
 }
 
@@ -264,6 +270,30 @@ footer .derechos{
 
 
 
+
+/*           ---   MEDIA QUERY DESKTOP   ---           */
+
+
+
+
+@media only screen and (min-width: 991px){
+
+body div .navSticky{
+    position: sticky;
+    top: 1px;
+    z-index: 1;
+}
+    
+footer .footer__social a:hover{
+    border-radius: 200%;
+    background-color: rgb(255, 255, 255);
+}
+    
+}
+
+
+
+
 /*           ---     MEDIA QUERY TABLET   ---           */
 
 
@@ -285,6 +315,7 @@ footer .derechos{
 
 
 }
+
 
 
 /*           ---   MEDIA QUERY MOBILE   ---            */
@@ -339,28 +370,6 @@ footer .derechos{
 .cuerpo__presentaciones section iframe{
     width: 18em;
     max-width: 100%;
-}
-
-}
-
-
-
-/*           ---   MEDIA QUERY DESKTOP   ---           */
-
-
-
-
-@media only screen and (min-width: 991px){
-
-body div .navSticky{
-    position: sticky;
-    top: 1px;
-    z-index: 1;
-}
-
-footer .footer__social a:hover{
-    border-radius: 200%;
-    background-color: rgb(255, 255, 255);
 }
 
 }
