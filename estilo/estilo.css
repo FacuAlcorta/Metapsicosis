@@ -7,85 +7,69 @@ font-family: 'Yanone Kaffeesatz', sans-serif;
     
 }
 
-.indexBody{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas:
-    "indexNav    indexNav   indexNav   indexNav"
-    "indexHeader indexHeader indexHeader  indexHeader"
-    "cuerpocontenido cuerpocontenido cuerpocontenido cuerpocontenido"
-    "indexFooter indexFooter indexFooter indexFooter"
-    ;
-}
+/*    ------   NAVBAR   ------    */
 
-.indexNav{
-    grid-area: indexNav;
-}
-
-.indexHeader{
-    grid-area: indexHeader;
-}
-
-.cuerpoContenido{
-    grid-area: cuerpocontenido;
-}
-
-.indexFooter{
-    grid-area: indexFooter;
-}
-
-
-/* ----------      BARRA NAVEGACION      ---------- */
-
-nav{
+.navbar{
     background-color: rgba(29, 28, 28, 0.5);
     height: auto;
     border: 1px solid white;
-    padding: 5px;
     margin: 10px;
 }
 
-nav .nav__body{
+.nav__body{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul{
     padding: 10px;
     margin: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     list-style: none;
-
 }
 
-nav button{
+nav div ul li{
     background-color: rgb(189, 183, 183);
-    text-transform: uppercase;
-    text-decoration: none;
-    justify-content: center;
+    text-align: center;
     cursor: pointer;
     border-radius: 10px;
     width: 250px;
     height: 50px;
-    border: 5px solid rgba(100, 100, 100, 0.2)
+    border: 5px solid rgba(100, 100, 100, 0.2);
 }
 
-nav .anchor{
-    font-size: 20px;
-    padding: 20px 40px 20px 40px;
+nav div ul .actual{
+    background-color: white;
+    border-color: rgba(100, 100, 100, 0.1);
+    transform: translate(0px, -5px);
+}
+
+.anchor{
+    font-size: 31px;
+    font-weight: 500;
     color: black;
+    text-transform: uppercase;
     text-decoration: none;
+    padding: 20px 40px 20px 40px;
+    line-height: 35px;
 }
 
-/* ----------      INDEX      ---------- */
+nav div ul li:hover{
+    background-color: white;
+    transform: translate(0px, -5px);
+}
 
-.indexHeader{
+/*    ------   INDEX   ------    */
+
+.portadaIndex .pMeta,
+.portadaIndex .pMael{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    
 }
-
-.indexHeader .portadaShadow{
-    box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
-}
-
 
 .cuerpoContenido{
     border: 1px solid black;
@@ -106,17 +90,99 @@ nav .anchor{
     font-size: 2.5em;
 }
 
+.portadaShadow,
+.principal .section img,
+.elmain .section .marcos__foto .autobio__img{
+    box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
+}
 
-/*      ----------     PRESENTACIONES     ---------      */
+.portadaLight:hover{
+    box-shadow: 0 0 50px 0 rgb(255, 255, 255)
+}
 
-.cuerpo__presentaciones{
+
+/*    ------ PUBLICACIONES ------    */
+
+main section{
+    background-color: rgba(228, 228, 228, 0.5);
+    border: 1px solid black;
+    padding: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+main .section div{
+    padding: 10px;
+}
+
+/* -----lineas de "PUBLICACIONES" */
+main .section .principal__titulo,
+main .section .libros__img img,
+main .section .libros__texto,
+/* -----lineas de "SOBRE MI" */
+main .section .autobio__img,
+main .section .autobio__titulo,
+main .section .autobio__texto,
+main .section .autores,
+main .section .editorial{
+    border: 1px solid black;  
+    align-self: center;
+}
+
+main .section .principal__titulo,
+/* -----lineas de "SOBRE MI" */
+main .section .autobio__titulo,
+main .section .autores,
+main .section .editorial{
+        background-color: rgba(48, 48, 48, 0.5);
+        color: white;
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 1em;
+}
+
+main .section .libros__texto,
+main .section .autobio__texto{
+    background-color: rgba(252, 239, 239, 0.5);
+    font-size: 2.5em;
+    padding: 10px;
+}
+    
+.autobio__texto{
+    font-size: 3em;
+}
+    
+.section .carritocompras{
+    cursor: pointer;
+}
+    
+.section .shopp:hover{
+    border-radius: 0 50% 0 50%;
+    background-color: rgba(228, 44, 44, 0.3);
+}
+
+/*    ------ SOBRE MI ------    */
+
+.elmain .section .titulos{
+    text-decoration: underline;
+}
+
+.elmain .section .lista .author{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+
+
+
+/*    ------   PRESENTACIONES   ------    */
+
+.cuerpo__presentaciones section div{
     text-align: center;
     font-size: 30px;
     color: white;
-    padding: 20px;
     margin: 10px;
 }
 
@@ -127,7 +193,6 @@ nav .anchor{
 
 .cuerpo__presentaciones section div .pres__subtitulo{
     text-decoration: underline;
-    color: rgb(0, 0, 0);
     text-decoration-style: double;
 }
 
@@ -136,212 +201,160 @@ nav .anchor{
 }
 
 
-/*      ----------      FOOTER      ----------      */
 
-.indexFooter{
+/*    ------ CONTACTO   ------    */
+
+main .cuerpo__contacto{
+    justify-content: space-evenly;
+}
+
+main .cuerpo__contacto .cuerpo__titulo{
+    background-color: rgba(48, 48, 48, 0.5);
+    font-size: 3em;
+    color: white;
+    text-align: center;
+}
+
+main .cuerpo__contacto .formulario .nombre,
+main .cuerpo__contacto .formulario .apellido,
+main .cuerpo__contacto .formulario .email,
+main .cuerpo__contacto .formulario .msj{
+    color: white;
+    background-color: rgba(48, 48, 48, 0.5);
+    text-align: center;
+    font-size: 2.5em;
+    width: 100%;
+}
+
+main .cuerpo__contacto .formulario .nombre__area,
+main .cuerpo__contacto .formulario .apellido__area,
+main .cuerpo__contacto .formulario .email__area,
+main .cuerpo__contacto .formulario .msj__area,
+main .cuerpo__contacto .formulario .btnenviar,
+main .cuerpo__contacto .formulario .btnreset{
+    font-size: 1.5em;
+}
+
+
+
+/*    ------   FOOTER   ------    */
+
+
+
+footer{
     border: 3px solid black;
     background-color: rgba(83, 83, 83);
     margin: 10px;
     height: 100px;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+footer .footer__social{
+    display: flex;
+    justify-content: center;
 }
 
 
-.indexFooter .footer__social{
+footer .footer__social a{
     width: 50px;
-    height: 50px;
+    display: block;
     margin-top: 10px;
 }
 
-.indexFooter .footer__social:hover{
-    border-radius: 200%;
-    background-color: white;
-}
 
-.indexFooter .derechos{
+footer .derechos{
     color: white;
-    display: grid;
-    padding-top: 20px;
 }
 
 
 
 
-
-
-/*   ----------    MEDIAS QUERIES    ----------   */
-
+/*           ---   MEDIA QUERY DESKTOP   ---           */
 
 
 
 
+@media only screen and (min-width: 991px){
 
-
-
-
-
-
-
-            /* MEDIA QUERIE MOBILE*/
-
-
-
-
-@media only screen and (max-width: 768px){
-/* ----------      BARRA NAVEGACION      ---------- */
-
-.indexBody{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-    "indexNav    indexNav"
-    "cuerpocontenido cuerpocontenido"
-    "indexHeader indexHeader"
-    "indexFooter indexFooter"
-    ;
+body div .navSticky{
+    position: sticky;
+    top: 1px;
+    z-index: 1;
 }
-
-.indexNav{
-    grid-area: indexNav;
+    
+footer .footer__social a:hover{
+    border-radius: 200%;
+    background-color: rgb(255, 255, 255);
 }
-
-.indexHeader{
-    grid-area: indexHeader;
-}
-
-.cuerpoContenido{
-    grid-area: cuerpocontenido;
-}
-
-.indexFooter{
-    grid-area: indexFooter;
+    
 }
 
 
 
-nav{
-    background-color: rgba(29, 28, 28, 0.5);
-    height: auto;
-    border: 1px solid white;
-    padding: 5px;
-    margin: 10px;;
-}
 
-nav .nav__body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    gap: 10px
-;
-}
-
-nav button{
-    background-color: rgb(189, 183, 183);
-    text-transform: uppercase;
-    text-decoration: none;
-    justify-content: center;
-    border-radius: 10px;
-    width: 250px;
-    height: 50px;
-    border: 5px solid rgba(100, 100, 100, 0.2)
-}
-
-nav .anchor{
-    font-size: 20px;
-    padding: 20px 70px 20px 40px;
-    color: black;
-    text-decoration: none;
-}
-
-nav .btn1{
-    background-color: white;
-    border-color: rgba(100, 100, 100, 0.1);
-}
+/*           ---     MEDIA QUERY TABLET   ---           */
 
 
-/* ----------      INDEX      ---------- */
+@media only screen and (min-width: 769px) and (max-width: 991px){
 
-.indexBody{
-    margin-top: 0px;
-}
-
-.indexHeader{
-    display: flex;
+.portadaShadow,
+.elmain .section .marcos__foto{
     width: fit-content;
-    flex-direction: row;
-    gap: 20px;
-}
+    max-width: 100%;
+    box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
+}    
 
-.indexHeader .portadaShadow{
+.portadaShadow{
+    padding: 1em;
     width: fit-content;
     max-width: 100%;
     box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
 }
 
-.cuerpoContenido{
-    border: 1px solid black;
-    background-color:rgba(22, 22, 22, 0.5);
-    color: white;
-    text-align: center;
-    margin: 20px;
+
 }
 
-/*      ---------     SOBRE MI     ----------      */
 
-.elmain .section{
+
+/*           ---   MEDIA QUERY MOBILE   ---            */
+
+
+
+
+@media only screen and (max-width: 768px){
+
+    /*   ---  NAVBAR  ---   */
+
+.navbar{
+    background-color: rgba(29, 28, 28, 0.5);
+    height: auto;
+    border: 1px solid white;
+    margin: 10px;
+}
+    
+.nav__body{
     display: flex;
     flex-direction: column;
     align-items: center;
+}   
+
+/*   ---  INDEX  ---   */
+
+.portadaShadow,
+/* --- SOBRE MI --- */
+.elmain .section .marcos__foto{
+    padding: 1em;
+    width: fit-content;
+    max-width: 100%;
+    box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
 }
 
-.elmain .section .autobio__titulo,
-.elmain .section .autores,
-.elmain .section .editorial{
-    width: 100%;
-}
-
-.section .autores .lista,
-.section .editorial .lista{
-    list-style: none;
-}
-
-.section .autores .titulos,
-.section .editorial .titulos{
-    text-decoration: underline;
-}
-
-.section .autores .lista .author,
-.section .editorial .lista .author{
-    color: white;
-    text-decoration: none;
-}
-
-/*      ----------     PUBLICACIONES     ---------- */
-
-.principal .section,
-.pcincipal .section .carritocompras{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section{
-    background-color: rgba(228, 228, 228, 0.5);
-    border: 1px solid black;
-    padding: 5px;
-}
-
-/* -----lineas de "PUBLICACIONES" */
-.section .principal__titulo,
-.section .libros__texto,
-/* -----lineas de "SOBRE MI" */
-.section .autobio__titulo,
-.section .autobio__texto,
-.section .autores,
-.section .editorial{
-    border: 1px solid black;
-    margin: 10px;  
+.cuerpoContenido div p,
+.principal .section .libros__texto,
+.elmain .section .autobio__texto{
+    font-size: 1.7em;
 }
 
 .indexHeader .portadaShadow,
@@ -352,571 +365,11 @@ nav .btn1{
     
 }
 
-.principal .section .principal__titulo,
-/* -----lineas de "SOBRE MI" */
-.section .autobio__titulo,
-.section .autores,
-.section .editorial{
-    background-color: rgba(48, 48, 48, 0.5);
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    width: 100%;
+/*    --- PRESENTACIONES ---    */
+
+.cuerpo__presentaciones section iframe{
+    width: 18em;
+    max-width: 100%;
 }
-
-.libros__texto,
-.autobio__texto{
-    background-color: rgba(252, 239, 239, 0.5);
-    text-align: center;
-    font-weight: 550;
-    font-size: 46px;
-    padding: 10px;
-}
-
-.autobio__texto{
-    font-size: 50px;
-}
-
-.section .carritocompras{
-    border-radius: 0 50% 0 50%;
-    background-color: rgba(228, 44, 44, 0.3);
-    
-}
-
-.section .texto--mael{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/*      ---------     CONTACTO     ----------      */
-
-main .cuerpo__contacto{
-    background-color: rgba(48, 48, 48, 0.5);
-    border: 2px solid black;
-    font-size: 30px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-main .cuerpo__contacto .cuerpo__titulo{
-    background-color: rgba(48, 48, 48, 0.5);
-    color: white;
-    text-align: center;
-}
-
-main .cuerpo__contacto .formulario{
-    max-width: 600px;
-    min-width: 300px;
-    padding: 10%;
-
-    display: grid;
-}
-
-main .cuerpo__contacto .formulario .nombre,
-main .cuerpo__contacto .formulario .apellido,
-main .cuerpo__contacto .formulario .email,
-main .cuerpo__contacto .formulario .msj{
-    color: white;
-    background-color: rgba(48, 48, 48, 0.5);
-    text-align: center;
-    font-size: 40px;
-    width: 100%;
-}
-
-main .cuerpo__contacto .formulario .nombre__area,
-main .cuerpo__contacto .formulario .apellido__area,
-main .cuerpo__contacto .formulario .email__area,
-main .cuerpo__contacto .formulario .msj__area,
-main .cuerpo__contacto .formulario .btnenviar,
-main .cuerpo__contacto .formulario .btnreset{
-    font-size: 20px;
-}
-
-/*      ----------      FOOTER      ----------      */
-
-footer{
-    border: 3px solid black;
-    background-color: rgba(83, 83, 83);
-    margin: 10px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-}
-
-
-.footer .footer__social{
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.footer .footer__social:hover{
-    border-radius: 200%;
-    background-color: white;
-}
-
-.footer .derechos{
-    color: white;
-    display: grid;
-    grid-column: span 3;
-    padding-top: 20px;
-}
-}
-
-
-
-              /* MEDIA QUERIE TABLET */
-
-
-
-@media only screen and (min-width: 769px) and (max-width: 1023px){
-    
-    .indexBody{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas:
-        "indexNav    indexNav"
-        "cuerpocontenido cuerpocontenido"
-        "indexHeader indexHeader"
-        "indexFooter indexFooter"
-        ;
-    }
-    
-    .indexNav{
-        grid-area: indexNav;
-    }
-    
-    .indexHeader{
-        grid-area: indexHeader;
-    }
-    
-    .cuerpoContenido{
-        grid-area: cuerpocontenido;
-    }
-    
-    .indexFooter{
-        grid-area: indexFooter;
-    }
-    
-    
-    
-    nav{
-        background-color: rgba(29, 28, 28, 0.5);
-        height: auto;
-        border: 1px solid white;
-        padding: 5px;
-        margin: 10px;;
-    }
-    
-    nav .nav__body{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        list-style: none;
-        gap: 10px        ;
-    }
-    
-    nav button{
-        background-color: rgb(189, 183, 183);
-        text-transform: uppercase;
-        text-decoration: none;
-        justify-content: center;
-        border-radius: 10px;
-        width: 250px;
-        height: 50px;
-        border: 5px solid rgba(100, 100, 100, 0.2)
-    }
-    
-    nav .anchor{
-        font-size: 20px;
-        padding: 20px 70px 20px 40px;
-        color: black;
-        text-decoration: none;
-    }
-    
-    nav .btn1{
-        background-color: white;
-        border-color: rgba(100, 100, 100, 0.1);
-    }
-    
-    
-    /* ----------      INDEX      ---------- */
-    
-    .indexBody{
-        margin-top: 0px;
-    }
-
-    .indexHeader{
-        display: flex;
-        width: fit-content;
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .indexHeader .portadaShadow{
-        width: fit-content;
-        max-width: 100%;
-        box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
-    }
-    
-    .cuerpoContenido{
-        border: 1px solid black;
-        background-color:rgba(22, 22, 22, 0.5);
-        color: white;
-        text-align: center;
-        margin: 20px;
-    }
-
-
-    /*      ----------     SOBRE MI     ----------      */
-
-    .elmain .section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .elmain .section .autobio__titulo,
-    .elmain .section .autores,
-    .elmain .section .editorial{
-        width: 100%;
-    }
-    
-    .section .autores .lista li,
-    .section .editorial .lista li{
-        list-style: none;
-    }
-    
-    .section .autores .titulos,
-    .section .editorial .titulos{
-        text-decoration: underline;
-    }
-    
-    .section .autores .lista .author,
-    .section .editorial .lista .author{
-        color: white;
-        text-decoration: none;
-    }
-
-/*      ----------     PUBLICACIONES     ---------- */
-
-.principal .section,
-.pcincipal .section .carritocompras{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section{
-    background-color: rgba(228, 228, 228, 0.5);
-    border: 1px solid black;
-    padding: 5px;
-}
-
-/* -----lineas de "PUBLICACIONES" */
-.section .principal__titulo,
-.section .libros__img img,
-.section .libros__texto,
-/* -----lineas de "SOBRE MI" */
-.section .autobio__img,
-.section .autobio__titulo,
-.section .autobio__texto,
-.section .autores,
-.section .editorial{
-    border: 1px solid black;
-    margin: 10px;  
-}
-
-.principal .section .principal__titulo,
-/* -----lineas de "SOBRE MI" */
-.section .autobio__titulo,
-.section .autores,
-.section .editorial{
-    background-color: rgba(48, 48, 48, 0.5);
-    color: white;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    width: 100%;
-}
-
-.libros__texto,
-.autobio__texto{
-    background-color: rgba(252, 239, 239, 0.5);
-    text-align: center;
-    font-weight: 550;
-    font-size: 46px;
-    padding: 10px;
-}
-
-.autobio__texto{
-    font-size: 50px;
-}
-
-.section .carritocompras{
-    border-radius: 0 50% 0 50%;
-    background-color: rgba(228, 44, 44, 0.3);
-    
-}
-
-.section .texto--mael{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*      ----------     CONTACTO     ----------      */
-
-main .cuerpo__contacto{
-    background-color: rgba(48, 48, 48, 0.5);
-    border: 2px solid black;
-    font-size: 30px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-main .cuerpo__contacto .cuerpo__titulo{
-    background-color: rgba(48, 48, 48, 0.5);
-    color: white;
-    text-align: center;
-}
-
-main .cuerpo__contacto .formulario{
-    max-width: 1000px;
-    min-width: 600px;
-    padding: 10%;
-
-    display: grid;
-}
-
-main .cuerpo__contacto .formulario .nombre,
-main .cuerpo__contacto .formulario .apellido,
-main .cuerpo__contacto .formulario .email,
-main .cuerpo__contacto .formulario .msj{
-    color: white;
-    background-color: rgba(48, 48, 48, 0.5);
-    text-align: center;
-    font-size: 40px;
-    width: 100%;
-}
-
-main .cuerpo__contacto .formulario .nombre__area,
-main .cuerpo__contacto .formulario .apellido__area,
-main .cuerpo__contacto .formulario .email__area,
-main .cuerpo__contacto .formulario .msj__area,
-main .cuerpo__contacto .formulario .btnenviar,
-main .cuerpo__contacto .formulario .btnreset{
-    font-size: 20px;
-}
-
-
-}
-
-
-            /* MEDIA QUERIE DESKTOP */
-
-
-
-
-@media only screen and (min-width: 1024px){
-
-    .indexBody{
-        margin-top: 0px;
-    }
-
-    nav{
-        position: sticky;
-        top: 1px;   
-        z-index: 1;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: space-evenly;
-        padding: 10%;
-    }
-    nav .btn1{
-        background-color: white;
-        border-color: rgba(100, 100, 100, 0.1);
-        transform: translate(0px, -5px);
-    }
-    
-    nav .nav__inicio{
-        padding-left: 30px;
-    }
-    
-    nav .btn:hover{
-        background-color: white;
-        transform: translate(0px, -5px);
-    }
-
-    header .portadaLight:hover{
-        box-shadow: 0 0 50px 0 rgb(255, 255, 255)
-    }
-
-    /*      ----------     SOBRE MI     ----------      */
-
-    .section .marcos__foto .autobio__img{
-        border: 3px white;
-        box-shadow: 0 0 50px 0 rgba(5, 5, 5, 1)
-    }
-    
-    .section .autores .lista,
-    .section .editorial .lista{
-        list-style: none;
-    }
-    
-    .section .autores .titulos,
-    .section .editorial .titulos{
-        text-decoration: underline;
-    }
-    
-    .section .autores .lista .author,
-    .section .editorial .lista .author{
-        color: white;
-        text-decoration: none;
-    }
-
-
-    /*      ----------     PUBLICACIONES     ----------    */
-
-    .section{
-        background-color: rgba(228, 228, 228, 0.5);
-        border: 1px solid black;
-        padding: 5px;
-        
-        display: grid;
-        gap: 5px;
-        grid-template-columns: repeat(7, 1fr);
-    }
-    
-    /* -----lineas de "PUBLICACIONES" */
-    .section .principal__titulo,
-    .section .libros__img img,
-    .section .libros__texto,
-    /* -----lineas de "SOBRE MI" */
-    .section .autobio__img,
-    .section .autobio__titulo,
-    .section .autobio__texto,
-    .section .autores,
-    .section .editorial{
-        border: 1px solid black;
-        margin: 10px;  
-    }
-    
-    .principal .section .principal__titulo,
-    /* -----lineas de "SOBRE MI" */
-    .section .autobio__titulo,
-    .section .autores,
-    .section .editorial{
-        background-color: rgba(48, 48, 48, 0.5);
-        color: white;
-        text-align: center;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 20px;
-        grid-column: span 7;
-    }
-    
-    .pcincipal .section .libros__img,
-    .principal .section .libros__texto,
-    /* -----linea de "SOBRE MI" */
-    .section .autobio__img,
-    .section .autobio__texto{
-        grid-column: span 6;
-    }
-    
-    .libros__texto,
-    .autobio__texto{
-        background-color: rgba(252, 239, 239, 0.5);
-        text-align: center;
-        font-weight: 550;
-        font-size: 46px;
-        padding: 10px;
-    }
-    
-    .autobio__texto{
-        font-size: 50px;
-    }
-    
-    .section .carritocompras{
-        position: relative;
-        left: 600px;
-        cursor: pointer;
-    }
-    
-    .section .shopp:hover{
-        border-radius: 0 50% 0 50%;
-        background-color: rgba(228, 44, 44, 0.3);
-        
-    }
-    
-    .section .texto--mael{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    /*      ---------     CONTACTO     --------- */
-
-    main .cuerpo__contacto{
-        background-color: rgba(48, 48, 48, 0.5);
-        border: 2px solid black;
-        font-size: 30px;
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    main .cuerpo__contacto .cuerpo__titulo{
-        background-color: rgba(48, 48, 48, 0.5);
-        color: white;
-        text-align: center;
-    }
-    
-    main .cuerpo__contacto .formulario{
-           
-        display: flex;
-        flex-direction: column;
-        min-width: 600px;
-        max-width: 1600px;
-        
-    }
-    
-    main .cuerpo__contacto .formulario .nombre,
-    main .cuerpo__contacto .formulario .apellido,
-    main .cuerpo__contacto .formulario .email,
-    main .cuerpo__contacto .formulario .msj{
-        color: white;
-        background-color: rgba(48, 48, 48, 0.5);
-        text-align: center;
-        font-size: 40px;
-        width: 100%;
-    }
-
-    main .cuerpo__contacto .formulario .nombre__area,
-    main .cuerpo__contacto .formulario .apellido__area,
-    main .cuerpo__contacto .formulario .email__area,
-    main .cuerpo__contacto .formulario .msj__area,
-    main .cuerpo__contacto .formulario .btnenviar,
-    main .cuerpo__contacto .formulario .btnreset{
-    font-size: 20px;
-    }
-    
-    main .cuerpo__contacto form input{
-        padding: 10px;
-    }
-    
-
 
 }
